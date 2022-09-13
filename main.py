@@ -16,6 +16,7 @@ app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
 user_id = os.environ["USER_ID"]
+user_idan = os.environ["USER_IDAN"]
 template_id = os.environ["TEMPLATE_ID"]
 
 
@@ -58,4 +59,6 @@ wea, temperature,highest,lowest,wind = get_weather()
 
 data = {"city":{"value":city, "color":get_random_color()},"weather":{"value":wea, "color":get_random_color()},"temperature":{"value":temperature, "color":get_random_color()},"highest":{"value":highest, "color":get_random_color()},"lowest":{"value":lowest, "color":get_random_color()},"wind":{"value":wind, "color":get_random_color()},"love_days":{"value":get_count(), "color":get_random_color()},"birthday_left":{"value":get_birthday(), "color":get_random_color()},"birthday_right":{"value":get_birthdayan(), "color":get_random_color()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
+resan = wm.send_template(user_idan, template_id, data)
 print(res)
+print(resan)
